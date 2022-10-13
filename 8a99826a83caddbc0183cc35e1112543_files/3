@@ -1,8 +1,0 @@
-/* Pushed : Wed, 12 Oct 2022 12:46 PM UTC */
- var shareWidget = new OpenSocialShare(); shareWidget.init({ isHorizontalLayout: 0,
-    widgetIconSize: "32", widgetStyle: "square", theme: 'OpenSocialShareDefaultTheme', providers:{ top:[ {
-    name:"Facebook", title:"Streamline cloud migration with the Jira Cloud Migration Assistant",
-    description:"Jira Cloud Migration Assistant helps you migrate from server to cloud with greater flexibility and transparency", }, { name:"Twitter", title:"Jira Cloud Migration Assistant helps you migrate from server to cloud with greater flexibility and transparency", }, { name:"LinkedIn",
-    title:"Streamline cloud migration with the Jira Cloud Migration Assistant", description:"Jira Cloud Migration Assistant helps you migrate from server to cloud with greater flexibility and transparency", } ] } });
-    shareWidget.injectInterface(".oss-widget-interface");
-    shareWidget.setWidgetTheme(".oss-widget-interface"); 
