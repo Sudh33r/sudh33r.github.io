@@ -1,0 +1,77 @@
+/* Pushed : Wed, 12 Oct 2022 12:46 PM UTC */
+
+    $(window).scroll(function(){
+        // Assign relevant values
+        var window_top = $(window).scrollTop(),
+        div_top = $('#stickyDiv').offset().top,
+        navHeight = $('#stickyDiv').outerHeight(),
+        windowPos = $(window).scrollTop() + navHeight,
+        windowHeight = $(window).outerHeight(),
+        docHeight = $(document).outerHeight();
+
+        if ($(window).scrollTop() >= navHeight) {
+        $('#stickyDiv').addClass('fixed-header');
+        }
+        else {
+        $('#stickyDiv').removeClass('fixed-header');
+        }
+    });
+
+   function expandSection (target) {
+        if (document.getElementById(target).classList.contains('expandSection')) {
+        document.getElementById(target).classList.remove('expandSection');
+        }
+        else {
+        document.getElementById(target).classList.add('expandSection');
+        }
+    }
+
+    $(document).ready(function() {
+        $(".li-wrapper1").addClass('active-background');
+
+        $(".image a").on('click', function(e){
+        $(".li-wrapper").removeClass('active-background');
+          e.preventDefault();
+        $(this).closest(".li-wrapper").addClass('active-background');
+        $("#myVideo").attr("src", $(this).attr('href'));
+    });
+
+    $(document).on('click', '#section_one_cta_one', function(e) {
+        var navHeight = $('#stickyDiv').outerHeight();
+        $('html, body').animate({
+        scrollTop: ($("#section4").offset().top-(2*navHeight))
+        }, 800, function () {});
+    });
+
+    $(document).on('click', '#section_one_cta_two', function(e) {
+        var expandedNavHeight = $('#nav-section').outerHeight();
+        var navHeight = $('#stickyDiv').outerHeight();
+  var scrollAmount = $("#footer").offset().top-((2*navHeight) - (0.75 * expandedNavHeight));
+  if($("#stickyDiv").hasClass("fixed-header")){
+        scrollAmount = $("#footer").offset().top - ((navHeight) - (0.75 * expandedNavHeight))
+    }
+        $('html, body').animate({
+        scrollTop: scrollAmount
+  }, 800, function () {});
+
+        setTimeout(function() {
+        $('.fa-angle-down').click();
+        }, 800);
+    });
+
+    $(document).on('click', '#section_four_cta', function(e) {
+        var navHeight = $('#stickyDiv').outerHeight();
+        $('html, body').animate({
+        scrollTop: ($("#footer").offset().top-(navHeight))
+        }, 800, function () {});
+    });
+
+    $(document).on('click', 'a[href="#footer"]', function(e) {
+        var navHeight = $('#stickyDiv').outerHeight();
+        $('html, body').animate({
+        scrollTop: ($("#footer").offset().top-(navHeight))
+        }, 800, function () {});
+    });
+
+});
+
